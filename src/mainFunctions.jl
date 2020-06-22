@@ -1,8 +1,6 @@
-module autogui
 using PyCall
 
 pyautogui = pyimport("pyautogui")
-@info pyautogui
 function tester()
     @info "it works"
 end
@@ -57,8 +55,4 @@ end
 function screenshot(x::Any,t=0.0)
     sleep(t)
     pyautogui.screenshot(region=(x[1],x[2],x[3],x[4]))
-end
-export getScreenSize,moveTo,click,doubleclick,write,alert,drag,press
-
-export keyDown,keyUp,scroll,hscroll,screenshot
 end

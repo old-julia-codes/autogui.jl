@@ -8,6 +8,24 @@ This package is more of a convinence right now but the plan is to make it native
 
 PRs welcome if you can help me out!! It is just in its infancy right now.
 
+## Install issues
+
+1) Huge error about PyCall
+- This package depends on Python files so dont forget to 
+]add PyCall
+- Please make sure you have Python installed first. 
+- If you dont have pyautogui installed run this snippet
+```julia
+]add Conda
+using Conda
+Conda.add("pyautogui",channel = "conda-forge")
+```
+- If that didnt work go the REPL and run this 
+```julia
+ENV["PYTHON"] = "wherever your python is"
+using Pkg
+Pkg.build("PyCall")
+```
 
 ## Functions provided
 
